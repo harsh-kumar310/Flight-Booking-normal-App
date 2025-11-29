@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SkyBook - Flight Search</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>✈️ SkyBook Airlines</h2>
+
+    <div class="search-box">
+      <select id="from-city">
+        <option value="" disabled selected>From (Departure)</option>
+        <option value="DEL">Delhi (DEL)</option>
+        <option value="BOM">Mumbai (BOM)</option>
+        <option value="BLR">Bangalore (BLR)</option>
+        <option value="MAA">Chennai (MAA)</option>
+        <option value="CCU">Kolkata (CCU)</option>
+        <option value="HYD">Hyderabad (HYD)</option>
+        <option value="GOI">Goa (GOI)</option>
+        <option value="PAT">Patna (PAT)</option>
+        <option value="LKO">Lucknow (LKO)</option>
+        <option value="NAG">Nagpur (NAG)</option>
+        <option value="PNQ">Pune (PNQ)</option>
+        <option value="SXR">Srinagar (SXR)</option>
+        <option value="TRV">Trivandrum (TRV)</option>
+        <option value="VTZ">Visakhapatnam (VTZ)</option>
+        <option value="IXA">Agartala (IXA)</option>
+        <option value="IXB">Bagdogra (IXB)</option>
+        <option value="BBI">Bhubaneswar (BBI)</option>
+        <option value="IDR">Indore (IDR)</option>
+        <option value="JAI">Jaipur (JAI)</option>
+        <option value="VNS">Varanasi (VNS)</option>
+      </select>
+
+      <select id="to-city">
+        <option value="" disabled selected>To (Destination)</option>
+        <option value="DEL">Delhi (DEL)</option>
+        <option value="BOM">Mumbai (BOM)</option>
+        <option value="BLR">Bangalore (BLR)</option>
+        <option value="MAA">Chennai (MAA)</option>
+        <option value="CCU">Kolkata (CCU)</option>
+        <option value="HYD">Hyderabad (HYD)</option>
+        <option value="GOI">Goa (GOI)</option>
+        <option value="PAT">Patna (PAT)</option>
+        <option value="LKO">Lucknow (LKO)</option>
+        <option value="NAG">Nagpur (NAG)</option>
+        <option value="PNQ">Pune (PNQ)</option>
+        <option value="SXR">Srinagar (SXR)</option>
+        <option value="TRV">Trivandrum (TRV)</option>
+        <option value="VTZ">Visakhapatnam (VTZ)</option>
+        <option value="IXA">Agartala (IXA)</option>
+        <option value="IXB">Bagdogra (IXB)</option>
+        <option value="BBI">Bhubaneswar (BBI)</option>
+        <option value="IDR">Indore (IDR)</option>
+        <option value="JAI">Jaipur (JAI)</option>
+        <option value="VNS">Varanasi (VNS)</option>
+      </select>
+
+      <input type="date" id="flight-date" />
+      <button id="search-btn">Search Flights</button>
+    </div>
+
+    <p class="loading" id="loader">Fetching data from server...</p>
+
+    <div id="results-area"></div>
+  </div>
+
+  <!-- Ticket Modal -->
+  <div id="ticket-modal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <h3>Recheck Your Ticket Details</h3>
+      <p id="ticket-summary"></p>
+      <div class="modal-buttons">
+        <button id="cancel-ticket" class="cancel">Cancel</button>
+        <button id="ok-generate" class="ok">OK, Generate</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Payment box -->
+  <div id="payment-box" class="payment-container hidden" aria-hidden="true">
+    <h3>Complete Payment</h3>
+
+    <div class="pay-buttons">
+      <button id="pay-qr" class="pay-btn">Pay by QR</button>
+      <button id="pay-google" class="pay-btn">Pay by Google ID</button>
+    </div>
+
+    <div id="qr-section" class="hidden">
+      <h4>Scan to Pay</h4>
+      <!-- Put your QR image file named qr.png in the same folder -->
+      <img src="qr.png" alt="QR Code" class="qr-img" />
+      <button id="final-generate" class="ok">Generate Ticket</button>
+    </div>
+
+    <div id="google-section" class="hidden">
+      <h4>Enter Google Pay ID</h4>
+      <input type="text" id="google-id" placeholder="example@oksbi" />
+      <button id="google-confirm" class="ok">Confirm Payment</button>
+    </div>
+
+    <div id="ticket-success" class="hidden success-box">
+      <h3>🎉 Payment Successful!</h3>
+      <p>Your ticket has been generated.</p>
+      <button id="print-ticket" class="ok">Print Ticket</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
